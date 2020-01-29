@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class CheckBoxRadioBtn {
     String driverLink = "/Users/minhle/Desktop/driver/chromedriver";
     String linkPage = "http://demo.guru99.com/test/radio.html";
-    String fbLink = "https://www.facebook.com/";
+
 
     WebDriver driver;
     @BeforeTest
