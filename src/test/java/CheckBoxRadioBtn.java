@@ -12,7 +12,6 @@ public class CheckBoxRadioBtn {
     String driverLink = "/Users/minhle/Desktop/driver/chromedriver";
     String linkPage = "http://demo.guru99.com/test/radio.html";
 
-
     WebDriver driver;
     @BeforeTest
     public void SetUp(){

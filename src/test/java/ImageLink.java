@@ -2,10 +2,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -13,14 +9,13 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class ImageLink {
-    String fbLink = "http://demo.guru99.com/V4/";
-    String driverLink = "/Users/minhle/Desktop/driver/chromedriver";
     WebDriver driver;
 
-
+    String strGuruLink = "http://demo.guru99.com/V4/";
+    String driverLink = "/Users/minhle/Desktop/driver/chromedriver";
     @BeforeTest
-    public void setUp(){
-        System.setProperty( "webdriver.chrome.driver", driverLink );
+    public void SetUp(){
+        System.setProperty("webdriver.chrome.driver", driverLink );
         driver = new ChromeDriver();
     }
 
@@ -31,18 +26,14 @@ public class ImageLink {
     }
 
     @Test
-    public void checkImageLink(){
-        driver.get(fbLink);
-        driver
-                .findElement(By
-                        .cssSelector("[type=\"text\"]"))
-                .sendKeys("Minh Le");
-        driver
-                .findElement(By
-                        .cssSelector("[type=\"password\"][name=\"password\"]"))
-                .sendKeys("Minh Le");
+    public void login(){
+        driver.get(strGuruLink);
+        WebElement txtUserID = driver.findElement(By.cssSelector("[type=\"text\"][name=\"uid\"]"));
+        WebElement txtPassword = driver.findElement(By.cssSelector("[type=\"password\"]"));
+        WebElement btnLogin = driver.findElement(By.cssSelector("[name=\"btnLogin\"]"));
 
-        driver.findElement(By.cssSelector("[name=\"btnLogin\"]")).click();
-
+        txtUserID.sendKeys("Minh Le UID");
+        txtPassword.sendKeys("Minh Le PW");
+        btnLogin.click();
     }
 }

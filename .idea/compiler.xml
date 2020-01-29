@@ -9,5 +9,11 @@
         <module name="SeleniumProject" />
       </profile>
     </annotationProcessing>
+<<<<<<< HEAD
+=======
+    <bytecodeTargetLevel>
+      <module name="SeleniumProject" target="11" />
+    </bytecodeTargetLevel>
+>>>>>>> learn
   </component>
 </project>
